@@ -32,6 +32,10 @@ En el archivo llamado app.model.ts, dentro de la carpeta src, busca la línea:
 MongooseModule.forRoot(''),
 Aquí es donde debes ingresar la dirección de tu base de datos, ya sea local o un cluster de MongoDB.
 
+Pueden usar este cluster el cual voy a elminar despues de un tiempo 
+mongodb+srv://stph4211:8mBxXrEKnaUiqXIo@cluster0.ywryc.mongodb.net/shopping
+
+
 ## Ejecución
 Para ejecutar cada tecnología, utiliza los siguientes comandos:
 
