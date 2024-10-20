@@ -36,8 +36,6 @@ export class ProductSelectedCardComponent implements OnInit {
   }
 
   emitProductData() {
-    console.warn('---')
-    console.log(this.undCost * this.quantity,)
     this.productUpdated.emit({
       importCost: this.undCost * this.quantity,
       sell: this.suggestedPrice * this.quantity

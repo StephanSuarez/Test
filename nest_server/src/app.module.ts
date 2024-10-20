@@ -7,7 +7,7 @@ import { ContainerModule } from './modules/container/container.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(''),
+    MongooseModule.forRoot('mongodb+srv://stph4211:8mBxXrEKnaUiqXIo@cluster0.ywryc.mongodb.net/shopping'),
     ProductsModule,
     ContainerModule
   ],

@@ -5,9 +5,9 @@
     <h3 style="margin-left: 25px;">Productos</h3>
     <div class="products">
       <app-product-selected-card 
-      *ngFor="let product of products" 
+      *ngFor="let product of products; let i = index" 
       [product]="[product]"
-      (productUpdated)="handleProductUpdate($event)">>
+      (productUpdated)="handleProductUpdate($event, i)">
     </app-product-selected-card>
 
       <div class="btns-products">
@@ -19,7 +19,9 @@
   <div class="dahsboard">
     <h3 style="margin-left: 25px;">Datos de importación</h3>
     <div class="importing-data">
-      <app-dashboard>
+      <app-dashboard
+        [totalImportCost]="totalImportCost"
+        [totalSellValue]="totalSellValue">
       </app-dashboard>
     </div>
   </div>

@@ -27,6 +27,9 @@ export class ContainerComponent {
 
   totalImportCost: number = 0;
   totalSellValue: number = 0;
+  numOfProducts: number = 0;
+
+  updatedProducts: { importCost: number, sell: number }[] = []; 
 
   constructor(private http: HttpClient) {}
 
@@ -79,14 +82,15 @@ export class ContainerComponent {
     });
   }
   
-  handleProductUpdate(updatedProductData: { importCost: number; sell: number }) {
-    setTimeout(() => {
-      this.totalImportCost += updatedProductData.importCost;
-      this.totalSellValue += updatedProductData.sell;
-      console.warn('---')
-      console.log('Total Import Cost:', this.totalImportCost);
-      console.log('Total Sell Value:', this.totalSellValue);
-    });
+  handleProductUpdate(event: { importCost: number, sell: number }, index: number) {
+    this.updatedProducts[index] = event;
+
+    this.calculateTotals();
+  }
+
+  calculateTotals() {
+    this.totalImportCost = this.updatedProducts.reduce((sum, product) => sum + product.importCost, 0);
+    this.totalSellValue = this.updatedProducts.reduce((sum, product) => sum + product.sell, 0);
   }
   
 }

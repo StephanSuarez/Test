@@ -10,19 +10,21 @@
 
   <div class="card costos-importacion">
     <h3>Costos de Importación</h3>
-    <p>Costo total del flete: <span>$22,240</span></p>
+    <p>Costo total del flete: <span>${{ totalImportCostContainer | number:'1.2-2' }}</span></p>
+    <hr>
     <ul>
-      <li>Flete marítimo: $1,401</li>
-      <li>Cargos de documentación: $560</li>
-      <li>Seguro de carga: $70</li>
-      <li>Cargos por demoras: $280</li>
-      <li>Transporte terrestre: $210</li>
-      <li>Cargos por manipulación: $210</li>
-      <li>IVA: $8,405</li>
-      <li>Aranceles: $8,847</li>
-      <li>Agente aduanero: $1,258</li>
-      <li>Comisión Sticky: $3,144</li>
+      <li>Flete marítimo: ${{ importCosts.fleteMaritimo | number:'1.2-2' }}</li>
+      <li>Cargos de documentación: ${{ importCosts.documentacion | number:'1.2-2' }}</li>
+      <li>Seguro de carga: ${{ importCosts.seguroCarga | number:'1.2-2' }}</li>
+      <li>Cargos por demoras: ${{ importCosts.demoras | number:'1.2-2' }}</li>
+      <li>Transporte terrestre: ${{ importCosts.transporteTerrestre | number:'1.2-2' }}</li>
+      <li>Cargos por manipulación: ${{ importCosts.manejo | number:'1.2-2' }}</li>
+      <li>IVA: ${{ importCosts.iva | number:'1.2-2' }}</li>
+      <li>Aranceles: ${{ importCosts.aranceles | number:'1.2-2' }}</li>
+      <li>Agente aduanero: ${{ importCosts.agenteAduanero | number:'1.2-2' }}</li>
+      <li>Comisión Sticky: ${{ importCosts.comisionSticky | number:'1.2-2' }}</li>
     </ul>
+    <hr>
   </div>
 
   <div class="card contenedor">
@@ -42,8 +44,8 @@
   </div>
 
   <div class="card costo-total">
-    <h3>Costo total estimado</h3>
-    <h2>$66,476</h2>
-    <button>Importar ahora</button>
-  </div>
+  <h3>Costo total estimado</h3>
+  <h2>${{ totalImportCostContainer | number:'1.2-2' }}</h2>
+  <button>Importar ahora</button>
+</div>
 </div>
