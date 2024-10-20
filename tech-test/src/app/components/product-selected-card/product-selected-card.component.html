@@ -1,0 +1,24 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product[0]?.images[0]" [alt]="product[0]?.name"> <!-- Accede al primer elemento -->
+    <p class="product-code">{{ product[0]?.code }}</p>
+  </div>
+
+  <div class="product-info">
+    <h3>name {{ product[0]?.name }}</h3>
+    <p>Total: <strong>${{ product[0]?.total }}</strong></p>
+    <div class="quantity-control">
+        <button (click)="decreaseQuantity()">-</button>
+        <input type="number" [(ngModel)]="quantity" (change)="onQuantityChange($event)" />
+        <button (click)="increaseQuantity()">+</button>
+    </div>
+</div>
+
+<div class="price-info">
+    <p><strong>Precio sugerido</strong> <input type="number" [(ngModel)]="suggestedPrice" (change)="onSuggestedPriceChange($event)" /></p>
+    <p>Costo por und.: <strong>${{ undCost }}</strong></p>
+    <p>Margen por und.: <strong>${{ undMarg }}</strong></p>
+    <p>Porcentaje margen: <strong>{{ perMarg }}%</strong></p>
+</div>
+
+</div>

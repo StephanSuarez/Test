@@ -1,0 +1,10 @@
+<div class="product-card">
+  <div class="img-contain">
+    <img [src]="product.images[0]" [alt]="product.name">
+  </div>
+  <div class="card-info">
+    <h3 class="titleh2">{{ product.name }}</h3>
+    <p class="big-price">${{ product.import_cost }} USD</p>
+    <p class="small-price">${{ product.import_cost }} cop</p>
+  </div>
+</div>

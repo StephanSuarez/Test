@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<main class="product-container">
+  <div class="gallery">
+    <div class="product-gallery">
+      <div class="thumbnail"></div>
+      <div class="thumbnail"></div>
+      <div class="thumbnail"></div>
+      <div class="thumbnail"></div>
+    </div>
+    <div class="gallery-img">
+        <img [src]="product.images" alt="{{ product.code }}">
+    </div>
+  </div>
+
+  <div class="product-details">
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <div class="rating">
+        <span>★★★★☆</span>
+    </div>
+    
+    <div class="options">
+        <p><strong>Color:</strong> {{ product.category }}</p>
+        <p><strong>Specification (length + width):</strong> [Especificaciones aquí]</p>
+    </div>
+
+    <div class="price">
+        <p>${{ product.import_cost }} USD</p>
+        <p class="original-price">${{ (product.import_cost + 30) | number: '1.2-2' }}</p>
+    </div>
+
+    <div class="quantity">
+        <button (click)="decrementQuantity()">-</button>
+        <input type="number" [(ngModel)]="quantity">
+        <button (click)="incrementQuantity()">+</button>
+    </div>
+      
+      <div class="total">
+        <p><strong>Total:</strong> ${{ product.import_cost * quantity }} USD</p> </div>
+
+    <button class="add-to-container" (click)="addToContainer()">
+        Agregar al contenedor
+    </button>
+</div>
+</main>
+
+<section class="product-info">
+  <h2>Características del producto</h2>
+  <table>
+      <tr>
+          <td>Material</td>
+          <td>Nylon</td>
+      </tr>
+      <tr>
+          <td>Origen</td>
+          <td>Otro</td>
+      </tr>
+      <tr>
+          <td>Packing Quantity</td>
+          <td>Scalable</td>
+      </tr>
+  </table>
+</section>
